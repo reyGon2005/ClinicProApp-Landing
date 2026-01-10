@@ -1,16 +1,63 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/footer.astro';
 
+// Importamos los componentes de React
+import GradientText from '../components/react/GradiantText';
+import SplitText from '../components/react/SplitText.jsx';
+import RotatingText from '../components/react/RotatingText.jsx';
+import DotGrid from '../components/react/DotGrid.jsx';
+import ScrollStack from '../components/react/ScrollStack.jsx';
+
+// Asegúrate de tener la imagen en la carpeta public/
+const screenshotUrl = "/home.png"; 
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="ClinicPro - Gestión Médica Inteligente">
+  <Navbar />
+
+  <section class="hero position-relative overflow-hidden" id="home" style="min-height: 90vh; padding-top: 100px;">
+    <DotGrid client:load />
+
+    <div class="container text-center position-relative">
+      <div class="mb-3">
+        <h1 class="display-5 display-lg-3 fw-bold text-dark-blue">
+			<SplitText text="Tu consultorio médico," client:load />
+		</h1>
+        
+        <div class="d-flex justify-content-center align-items-center gap-2 display-6 display-lg-4 fw-bold flex-wrap">
+			<span>más</span>
+			<RotatingText words={["Eficiente", "Organizado", "Rentable"]} client:load />
+		</div>
+      </div>
+
+      <p class="lead text-muted mx-auto mb-5 mt-4" style="max-width: 700px">
+        ClinicPro es la plataforma <GradientText client:load>todo-en-uno</GradientText> diseñada para transformar tu práctica médica.
+      </p>
+
+      <div class="d-flex gap-3 justify-content-center mb-5">
+        <a href="https://clinicpro-a1f53.web.app" class="btn btn-primary btn-lg rounded-pill px-5">Comenzar Gratis</a>
+      </div>
+
+      <div class="mt-5">
+        <img src={screenshotUrl} alt="Dashboard ClinicPro" class="img-fluid rounded-4 shadow-lg border" />
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="bg-light">
+    <div class="container pt-5 pb-5">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold display-5 text-dark-blue">Todo lo que necesitas</h2>
+        <p class="text-muted">Desliza hacia abajo para descubrir.</p>
+      </div>
+      
+      <ScrollStack client:visible />
+      
+      <div style="height: 20vh;"></div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
