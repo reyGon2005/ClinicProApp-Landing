@@ -55,19 +55,22 @@ export default function ScrollStack() {
   const cards = [
     {
       title: "Gestión de Pacientes",
-      description: "Historial clínico completo y seguro en la nube.",
+      description:
+        "Accede al historial de consultas, datos de contacto y motivos de consulta.",
       icon: "ph-users",
       color: "#3a86ff",
     },
     {
-      title: "Agenda Inteligente",
-      description: "Recordatorios automáticos por WhatsApp y correo.",
+      title: "Agenda Médica",
+      description:
+        "Organiza tu día. Registra citas, identifica espacios libres y mejora tu puntualidad.",
       icon: "ph-calendar-check",
       color: "#8338ec",
     },
     {
-      title: "Reportes Financieros",
-      description: "Visualiza tus ingresos y gastos al instante.",
+      title: "Finanzas Claras",
+      description:
+        "Registra ingresos y gastos. Visualiza tu balance diario y mensual con gráficas automáticas.",
       icon: "ph-chart-bar",
       color: "#ff006e",
     },
