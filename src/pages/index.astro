@@ -3,15 +3,37 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 
-// Importamos los componentes de React
+// Componentes React
 import GradientText from '../components/react/GradiantText';
 import SplitText from '../components/react/SplitText.jsx';
 import RotatingText from '../components/react/RotatingText.jsx';
 import DotGrid from '../components/react/DotGrid.jsx';
 import ScrollStack from '../components/react/ScrollStack.jsx';
+// Importamos el NUEVO Carousel
+import Carousel from '../components/react/Carousel.jsx';
 
-// Asegúrate de tener la imagen en la carpeta public/
 const screenshotUrl = "/home.png"; 
+
+// Datos para el Carousel (Iconos de Phosphor)
+const carouselItems = [
+  {
+    icon: "ph-calendar-check",
+    title: "Agenda visual",
+    desc: "Organiza tus citas visualmente para mejorar tu puntualidad."
+  },
+  {
+    icon: "ph-users",
+    title: "Expediente Digital",
+    desc: "Accede al historial clínico de tus pacientes desde cualquier dispositivo de forma segura y rápida."
+  },
+  {
+    icon: "ph-chart-line-up",
+    title: "Reportes Financieros",
+    desc: "Visualiza tus ingresos, gastos y rentabilidad mensual con gráficos fáciles de entender."
+  }
+];
+
+// ... (El resto de tus datos techStack y projects siguen igual) ...
 ---
 
 <Layout title="ClinicPro - Gestión Médica Inteligente">
@@ -23,13 +45,13 @@ const screenshotUrl = "/home.png";
     <div class="container text-center position-relative">
       <div class="mb-3">
         <h1 class="display-5 display-lg-3 fw-bold text-dark-blue">
-			<SplitText text="Tu consultorio médico," client:load />
-		</h1>
+          <SplitText text="Tu consultorio médico," client:load />
+        </h1>
         
         <div class="d-flex justify-content-center align-items-center gap-2 display-6 display-lg-4 fw-bold flex-wrap">
-			<span>más</span>
-			<RotatingText words={["Eficiente", "Organizado", "Rentable"]} client:load />
-		</div>
+          <span>más</span>
+          <RotatingText words={["Eficiente", "Organizado", "Rentable"]} client:load />
+        </div>
       </div>
 
       <p class="lead text-muted mx-auto mb-5 mt-4" style="max-width: 700px">
@@ -40,7 +62,7 @@ const screenshotUrl = "/home.png";
         <a href="https://clinicpro-a1f53.web.app" class="btn btn-primary btn-lg rounded-pill px-5">Comenzar Gratis</a>
       </div>
 
-      <div class="mt-5 mx-auto" style="max-width: 900px;">
+      <div class="mt-5 mx-auto mb-5" style="max-width: 900px;">
         <div class="ratio ratio-16x9 rounded-4 shadow-lg border overflow-hidden">
           <iframe 
             src="https://www.youtube.com/embed/iGGsOUrEZZk?si=d3uuTUS5TYafq8Ja" 
@@ -51,6 +73,19 @@ const screenshotUrl = "/home.png";
           ></iframe>
         </div>
       </div>
+
+    </div>
+  </section>
+
+  <section class="py-5 bg-white">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold text-dark-blue">Funcionalidades Clave</h2>
+        <p class="text-muted">Descubre por qué los doctores eligen ClinicPro.</p>
+      </div>
+      
+      <Carousel items={carouselItems} interval={3000} client:visible />
+      
     </div>
   </section>
 
@@ -60,9 +95,7 @@ const screenshotUrl = "/home.png";
         <h2 class="fw-bold display-5 text-dark-blue">Todo lo que necesitas</h2>
         <p class="text-muted">Desliza hacia abajo para descubrir.</p>
       </div>
-      
       <ScrollStack client:visible />
-      
       <div style="height: 20vh;"></div>
     </div>
   </section>
