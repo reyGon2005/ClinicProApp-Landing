@@ -12,19 +12,12 @@ import ScrollStack from '../components/react/ScrollStack.jsx';
 // Importamos el NUEVO Carousel
 import Carousel from '../components/react/Carousel.jsx';
 
-const screenshotUrl = "/home.png"; 
-
 // Datos para el Carousel (Iconos de Phosphor)
 const carouselItems = [
   {
     icon: "ph-calendar-check",
     title: "Agenda visual",
     desc: "Organiza tus citas visualmente para mejorar tu puntualidad."
-  },
-  {
-    icon: "ph-users",
-    title: "Expediente Digital",
-    desc: "Accede al historial clínico de tus pacientes desde cualquier dispositivo de forma segura y rápida."
   },
   {
     icon: "ph-chart-line-up",
@@ -45,7 +38,7 @@ const carouselItems = [
     <div class="container text-center position-relative">
       <div class="mb-3">
         <h1 class="display-5 display-lg-3 fw-bold text-dark-blue">
-          <SplitText text="Tu consultorio médico," client:load />
+          <SplitText text="Tu consultorio," client:load />
         </h1>
         
         <div class="d-flex justify-content-center align-items-center gap-2 display-6 display-lg-4 fw-bold flex-wrap">
@@ -55,7 +48,7 @@ const carouselItems = [
       </div>
 
       <p class="lead text-muted mx-auto mb-5 mt-4" style="max-width: 700px">
-        ClinicPro es la plataforma <GradientText client:load>todo-en-uno</GradientText> diseñada para transformar tu práctica médica.
+        ClinicPro es la plataforma <GradientText client:load>todo-en-uno</GradientText> diseñada para transformar tu práctica clínica.
       </p>
 
       <div class="d-flex gap-3 justify-content-center mb-5">

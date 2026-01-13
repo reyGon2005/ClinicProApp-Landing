@@ -61,7 +61,7 @@ export default function ScrollStack() {
       color: "#3a86ff",
     },
     {
-      title: "Agenda Médica",
+      title: "Agenda",
       description:
         "Organiza tu día. Registra citas, identifica espacios libres y mejora tu puntualidad.",
       icon: "ph-calendar-check",
